@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<c:if test="${errors != null}">
+<c:if test="${errors != null}"> <!-- スコープのerrorsになにか入ってたら -->
     <div id="flush_error">
         入力内容にエラーがあります。<br />
         <c:forEach var="error" items="${errors}">
