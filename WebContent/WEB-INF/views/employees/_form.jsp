@@ -5,7 +5,7 @@
 <c:if test="${errors != null}"> <!-- スコープのerrorsになにか入ってたら -->
     <div id="flush_error">
         入力内容にエラーがあります。<br />
-        <c:forEach var="error" items="${errors}">
+        <c:forEach var="error" items="${errors}">     <!-- エラーリストからどんなエラーか取り出し -->
             ・<c:out value="${error}" /><br />
         </c:forEach>
 
