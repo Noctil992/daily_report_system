@@ -24,7 +24,7 @@
                         <td><c:out value="${employee.name}" /></td>
                         <td>
                             <c:choose>
-                                <c:when test="${employee.delete_flag == 1}">
+                                <c:when test="${employee.delete_flag == 1}"> <!-- flagが１なら削除されている扱いにする（実際にはデータは残っている) -->
                                     （削除済み）
                                 </c:when>
                                 <c:otherwise>
