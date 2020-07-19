@@ -34,8 +34,8 @@ public class Report {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id", nullable = false)    //従業員のidで日報を識別？
-    private Employee employee;
+    @JoinColumn(name = "employee_id", nullable = false)    //社番ではなく、employeeテーブルのidと対応させている
+    private Employee employee;              //employeeクラスのインスタンスを生成するのと同じ
 
     @Column(name = "report_date", nullable = false)
     private Date report_date;
