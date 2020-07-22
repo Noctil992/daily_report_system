@@ -62,6 +62,9 @@ public class Report {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
+    @Column(name = "good_count")
+    private Integer goodCount;
+
     public Integer getId() {
         return id;
     }
@@ -70,7 +73,7 @@ public class Report {
         this.id = id;
     }
 
-    public Employee getEmployee() {
+    public Employee getEmployee() {  //employeeクラスのインスタンスを返せる
         return employee;
     }
 
@@ -116,6 +119,14 @@ public class Report {
 
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public Integer getgoodCount() {
+        return goodCount;
+    }
+
+    public void setgoodCount(Integer goodCount) {
+        this.goodCount = goodCount;
     }
 }
 
