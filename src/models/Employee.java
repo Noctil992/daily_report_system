@@ -59,6 +59,9 @@ public class Employee {
     @Column(name = "delete_flag", nullable = false)
     private Integer delete_flag;
 
+    @Column(name = "position_flag", nullable = true)
+    private Integer position_flag;
+
     public Integer getId() {
         return id;
     }
@@ -121,5 +124,13 @@ public class Employee {
 
     public void setDelete_flag(Integer delete_flag) {
         this.delete_flag = delete_flag;
+    }
+
+    public void setPosition_flag(Integer position_flag) {
+        this.position_flag = position_flag;
+    }
+
+    public Integer getPosition_flag() {
+        return position_flag;
     }
 }

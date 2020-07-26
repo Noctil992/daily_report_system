@@ -65,6 +65,9 @@ public class Report {
     @Column(name = "good_count")
     private Integer goodCount;
 
+    @Column(name = "approval_flag", nullable = true)
+    private Integer approval_flag;
+
     public Integer getId() {
         return id;
     }
@@ -127,6 +130,14 @@ public class Report {
 
     public void setgoodCount(Integer goodCount) {
         this.goodCount = goodCount;
+    }
+
+    public Integer getApproval_flag() {
+        return approval_flag;
+    }
+
+    public void setApproval_flag(Integer approval_flag) {
+        this.approval_flag = approval_flag;
     }
 }
 
