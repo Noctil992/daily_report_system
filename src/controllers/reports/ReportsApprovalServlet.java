@@ -28,25 +28,27 @@ public class ReportsApprovalServlet extends HttpServlet {
     }
 
     /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            EntityManager em = DBUtil.createEntityManager();
+        EntityManager em = DBUtil.createEntityManager();
 
-            Report r = em.find(Report.class, (Integer)(request.getSession().getAttribute("report_id")));
+        Report r = em.find(Report.class, Integer.parseInt(request.getParameter("id")));
 
-            Integer p = 1;
-            r.setApproval_flag(p);
+        Integer p = r.getApproval_flag();
+        p = 1;
+        r.setApproval_flag(p);
 
-            em.getTransaction().begin();
-            em.getTransaction().commit();
-            em.close();
+        em.getTransaction().begin();
+        em.getTransaction().commit();
+        em.close();
 
-            request.getSession().setAttribute("flush", "承認が完了しました。");
+        request.getSession().setAttribute("flush", "承認が完了しました。");
 
-            request.getSession().removeAttribute("report_id");
+        request.getSession().removeAttribute("id");
 
-            response.sendRedirect(request.getContextPath() + "/reports/index");
+        response.sendRedirect(request.getContextPath() + "/reports/index");
+}
     }
-    }
+
 

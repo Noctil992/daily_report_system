@@ -43,6 +43,11 @@ public class ReportsGoodServlet extends HttpServlet {
         em.getTransaction().commit();
         em.close();
 
+        request.getSession().setAttribute("flush", "日報にいいねしました");
+
+        request.getSession().removeAttribute("id");
+
+
         response.sendRedirect(request.getContextPath() + "/reports/index");
     }
 
