@@ -11,7 +11,7 @@
         </c:if>
 
         <h2>従業員 一覧</h2>   <!-- の表 -->
-        <table id="employee_list">
+        <table class="table table-hover">
             <tbody>
                 <tr>
                     <th>社員番号</th>
@@ -20,7 +20,7 @@
                     <th>役職</th>
                 </tr>
                 <c:forEach var="employee" items="${employees}" varStatus="status">
-                    <tr class="row${status.count % 2}">
+                    <tr>
                         <td><c:out value="${employee.code}" /></td>
                         <td><c:out value="${employee.name}" /></td>
                         <td>
